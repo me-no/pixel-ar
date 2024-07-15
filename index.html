@@ -12,6 +12,9 @@
         <script src="https://rawgit.com/mayognaise/aframe-gif-shader/master/dist/aframe-gif-shader.min.js"></script>
         -->
         <script src="dist/aframe-gif-shader.min.js"></script>
+
+        <!-- jQuery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     </head>
 
     <body style="margin: 0; overflow: hidden;">
@@ -586,5 +589,54 @@
 
             <a-entity camera></a-entity>
         </a-scene>
+
+
+        <div class="msg-wrapper">
+            <p>マーカーを　カメラで　見てみよう</p>
+        </div>
+        <div class="marker-frame-wrapper" id="marker_frame_wrapper">
+            <img src="./assets/ar-frame-ex.png" />
+        </div>
+
     </body>
+
+    <script>
+        setTimeout(function() {
+            $('#marker_frame_wrapper').fadeOut('fast');
+        }, 5000); // <-- time in milliseconds
+        
+    </script>
+
+    <style>
+        .msg-wrapper {
+            /*
+            background-image: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url('./assets/msg-wrapper.gif');
+            background-size: contain;
+            background-color: rgba(255,255,255,0.5);
+            border:solid 4px rgba(0,0,0,0.5);
+            */
+            position: absolute;
+            display:flex;
+            flex-direction:column;
+            top:3%;
+            left:0;
+            width:90%;
+            padding:32px 16px;
+            color: #fff;
+            text-shadow: 1px 1px 2px #000;
+        }
+        .msg-wrapper p {
+            margin:auto;
+        }
+        .marker-frame-wrapper {
+            position:absolute;
+            top:25%;
+            left:10%;
+        }
+        .marker-frame-wrapper img {
+            width:80vw;
+            opacity:0.5;
+        }
+
+    </style>
 </html>
