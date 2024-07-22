@@ -631,11 +631,21 @@
         .marker-frame-wrapper {
             position:absolute;
             top:25%;
-            left:10%;
+            left:0;
+            right:0;
+            margin:auto;
+            text-align:center;
+            @media all and (orientation:landscape) {
+                top:15%;
+            }
         }
         .marker-frame-wrapper img {
             width:80vw;
             opacity:0.5;
+            @media all and (orientation:landscape) {
+                width:auto;
+                height:80vh;
+            }
         }
 
     </style>
