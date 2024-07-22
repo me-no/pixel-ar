@@ -41,9 +41,10 @@
                 <a-entity 
                     geometry="primitive:plane;"
                     rotation="-90 0 0"
-                    material="shader:gif;src:url(assets/cat.gif);opacity:1"></a-entity>
+                    material="shader:gif;src:url(assets/ar-cat.gif);opacity:1"></a-entity>
             </a-marker>
 
+            <!--
             <a-marker
                 type="pattern"
                 preset="custom"
@@ -58,6 +59,7 @@
                     rotation="-90 0 0"
                     material="shader:gif;src:url(assets/yacht.gif);opacity:1"></a-entity>
             </a-marker>
+            -->
 
             <a-marker
                 type="pattern"
@@ -71,7 +73,18 @@
                 <a-entity 
                     geometry="primitive:plane;" 
                     rotation="-90 0 0"
-                    material="shader:gif;src:url(assets/ar-firefly.gif);opacity:1"></a-entity>
+                    position="0 0 0"
+                    material="shader:gif;src:url(assets/ar-firefly-b.gif);opacity:1;transparent: true"></a-entity>
+                <a-entity 
+                    geometry="primitive:plane;" 
+                    rotation="-90 0 0"
+                    position="0 0.3 0"
+                    material="shader:gif;src:url(assets/ar-firefly-m.gif);opacity:1;transparent: true"></a-entity>
+                    <a-entity 
+                    geometry="primitive:plane;" 
+                    rotation="-90 0 0"
+                    position="0 1 0"
+                    material="shader:gif;src:url(assets/ar-firefly-f.gif);opacity:1;transparent: true"></a-entity>
             </a-marker>
 
             <!-- 完成したもの -->
