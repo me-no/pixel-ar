@@ -25,17 +25,14 @@ function setup() {
 
 function draw() {
   for(let i =0; i<grids; i++) {
-    if(mouseX > i*px +innerEdge && mouseX < (i+1)*px +innerEdge) {
-      for(let j =0; j<grids; j++) {
-        if(mouseY > j*px +innerEdge && mouseY < (j+1)*px + innerEdge) {
-          if(drawnArea[grids*j+i]%2==0){
-            fill(255);
-            rect(i*px+innerEdge, j*px+innerEdge, px, px);
-          } else {
-            fill(0);
-            rect(i*px+innerEdge, j*px+innerEdge, px, px);
-          }
-        }
+    for(let j=0;j<grids;j++) {
+      noFill();
+      if(drawnArea[grids*j+i]%2==0){
+        stroke(200,200,200);
+        rect(i*px+innerEdge, j*px+innerEdge, px, px);
+      } else {
+        stroke(0);
+        rect(i*px+innerEdge, j*px+innerEdge, px, px);
       }
     }
   }
