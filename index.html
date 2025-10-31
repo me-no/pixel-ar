@@ -12,10 +12,16 @@
 
     <!-- to load gifs -->
     <!--
+    <!-- to load gifs -->
+    <!--
         <script src="https://rawgit.com/mayognaise/aframe-gif-shader/master/dist/aframe-gif-shader.min.js"></script>
         -->
     <script src="dist/aframe-gif-shader.min.js"></script>
+    <script src="dist/aframe-gif-shader.min.js"></script>
 
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</head>
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </head>
@@ -23,7 +29,11 @@
 <body style="margin: 0; overflow: hidden;">
     <a-scene vr-mode-ui="enabled: false;" loading-screen="enabled: false;"
         arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;" id="scene" embedded gesture-detector>
+<body style="margin: 0; overflow: hidden;">
+    <a-scene vr-mode-ui="enabled: false;" loading-screen="enabled: false;"
+        arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;" id="scene" embedded gesture-detector>
 
+        <!-- プロトタイプ -->
         <!-- プロトタイプ -->
 
         <a-marker type="pattern" preset="custom" url="assets/pattern-ar-cat.patt" raycaster="objects: .clickable"
@@ -31,7 +41,13 @@
             <a-entity geometry="primitive:plane;" rotation="-90 0 0"
                 material="shader:gif;src:url(assets/ar-cat.gif);opacity:1"></a-entity>
         </a-marker>
+        <a-marker type="pattern" preset="custom" url="assets/pattern-ar-cat.patt" raycaster="objects: .clickable"
+            emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
+            <a-entity geometry="primitive:plane;" rotation="-90 0 0"
+                material="shader:gif;src:url(assets/ar-cat.gif);opacity:1"></a-entity>
+        </a-marker>
 
+        <!--
         <!--
             <a-marker
                 type="pattern"
@@ -58,11 +74,29 @@
             <a-entity geometry="primitive:plane;" rotation="-90 0 0" position="0 1 0"
                 material="shader:gif;src:url(assets/ar-firefly-f.gif);opacity:1;transparent: true"></a-entity>
         </a-marker>
+        <a-marker type="pattern" preset="custom" url="assets/pattern-ar-firefly.patt" raycaster="objects: .clickable"
+            emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
+            <a-entity geometry="primitive:plane;" rotation="-90 0 0" position="0 0 0"
+                material="shader:gif;src:url(assets/ar-firefly-b.gif);opacity:1;transparent: true"></a-entity>
+            <a-entity geometry="primitive:plane;" rotation="-90 0 0" position="0 0.3 0"
+                material="shader:gif;src:url(assets/ar-firefly-m.gif);opacity:1;transparent: true"></a-entity>
+            <a-entity geometry="primitive:plane;" rotation="-90 0 0" position="0 1 0"
+                material="shader:gif;src:url(assets/ar-firefly-f.gif);opacity:1;transparent: true"></a-entity>
+        </a-marker>
 
+        <!-- 完成したもの -->
         <!-- 完成したもの -->
 
         <!------------------- markers from mokemo-san ------------------------>
+        <!------------------- markers from mokemo-san ------------------------>
 
+        <a-marker type="pattern" preset="custom" url="assets/pattern-m05.patt" raycaster="objects: .clickable"
+            emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
+            <a-entity geometry="primitive:plane;" rotation="-90 0 0" position="0 0 0"
+                material="shader:gif;src:url(assets/m05_wolf.gif);opacity:1"></a-entity>
+            <a-entity geometry="primitive:plane;" rotation="-90 0 0" position="0 0.5 0" scale="0.8 0.8 0.8"
+                material="shader:gif;src:url(assets/m05_wolf.gif);opacity:0.7"></a-entity>
+        </a-marker>
         <a-marker type="pattern" preset="custom" url="assets/pattern-m05.patt" raycaster="objects: .clickable"
             emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
             <a-entity geometry="primitive:plane;" rotation="-90 0 0" position="0 0 0"
@@ -76,7 +110,19 @@
             <a-entity geometry="primitive:plane;" rotation="-90 0 0" position="0 0.5 0"
                 material="shader:gif;src:url(assets/m08-outline.gif);opacity:1"></a-entity>
         </a-marker>
+        <a-marker type="pattern" preset="custom" url="assets/pattern-m08.patt" raycaster="objects: .clickable"
+            emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
+            <a-entity geometry="primitive:plane;" rotation="-90 0 0" position="0 0.5 0"
+                material="shader:gif;src:url(assets/m08-outline.gif);opacity:1"></a-entity>
+        </a-marker>
 
+        <a-marker type="pattern" preset="custom" url="assets/pattern-m11.patt" raycaster="objects: .clickable"
+            emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
+            <a-entity geometry="primitive:plane;" rotation="-90 0 0" position="0 0 0"
+                material="shader:gif;src:url(assets/m11_hippo.gif);opacity:1"></a-entity>
+            <a-entity geometry="primitive:plane;" rotation="-90 0 0" position="0.3 0.4 0" scale="0.6 0.6 0.6"
+                material="shader:gif;src:url(assets/m11_hippo.gif);opacity:0.8"></a-entity>
+        </a-marker>
         <a-marker type="pattern" preset="custom" url="assets/pattern-m11.patt" raycaster="objects: .clickable"
             emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
             <a-entity geometry="primitive:plane;" rotation="-90 0 0" position="0 0 0"
@@ -86,8 +132,16 @@
         </a-marker>
 
         <!--------------------------------- markers from hisashi-san ----------------------------------->
+        <!--------------------------------- markers from hisashi-san ----------------------------------->
 
 
+        <a-marker type="pattern" preset="custom" url="assets/h21_shavedice.patt" raycaster="objects: .clickable"
+            emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
+            <a-entity geometry="primitive:plane;" rotation="-90 0 0" position="0 0 0"
+                material="shader:gif;src:url(assets/h21-shavedice.gif);opacity:1"></a-entity>
+            <a-entity geometry="primitive:plane;" rotation="-90 0 0" position="0 0.6 0" scale="0.7 0.7 0.7"
+                material="shader:gif;src:url(assets/h21-shavedice.gif);opacity:0.6"></a-entity>
+        </a-marker>
         <a-marker type="pattern" preset="custom" url="assets/h21_shavedice.patt" raycaster="objects: .clickable"
             emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
             <a-entity geometry="primitive:plane;" rotation="-90 0 0" position="0 0 0"
@@ -101,7 +155,17 @@
             <a-entity geometry="primitive:plane;" rotation="-90 0 0"
                 material="shader:gif;src:url(assets/h29-recorder.gif);opacity:1"></a-entity>
         </a-marker>
+        <a-marker type="pattern" preset="custom" url="assets/h29-recorder.patt" raycaster="objects: .clickable"
+            emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
+            <a-entity geometry="primitive:plane;" rotation="-90 0 0"
+                material="shader:gif;src:url(assets/h29-recorder.gif);opacity:1"></a-entity>
+        </a-marker>
 
+        <a-marker type="pattern" preset="custom" url="assets/h30-schooldesk.patt" raycaster="objects: .clickable"
+            emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
+            <a-entity geometry="primitive:plane;" rotation="-90 0 0"
+                material="shader:gif;src:url(assets/h30-schooldesk.gif);opacity:1"></a-entity>
+        </a-marker>
         <a-marker type="pattern" preset="custom" url="assets/h30-schooldesk.patt" raycaster="objects: .clickable"
             emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
             <a-entity geometry="primitive:plane;" rotation="-90 0 0"
@@ -117,7 +181,18 @@
             <a-entity geometry="primitive:plane;" rotation="-90 0 0" position="0 1.2 0" scale="0.3 0.3 0.3"
                 material="shader:gif;src:url(assets/h31-ring.gif);opacity:0.6"></a-entity>
         </a-marker>
+        <a-marker type="pattern" preset="custom" url="assets/pattern-h31-ring-white.patt"
+            raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
+            <a-entity geometry="primitive:plane;" rotation="-90 0 0" position="0 0 0"
+                material="shader:gif;src:url(assets/h31-ring.gif);opacity:1"></a-entity>
+            <a-entity geometry="primitive:plane;" rotation="-90 0 0" position="0 0.8 0" scale="0.5 0.5 0.5"
+                material="shader:gif;src:url(assets/h31-ring.gif);opacity:0.8"></a-entity>
+            <a-entity geometry="primitive:plane;" rotation="-90 0 0" position="0 1.2 0" scale="0.3 0.3 0.3"
+                material="shader:gif;src:url(assets/h31-ring.gif);opacity:0.6"></a-entity>
+        </a-marker>
 
+        <!-- ギターと被るので保留 -->
+        <!--
         <!-- ギターと被るので保留 -->
         <!--
             <a-marker
@@ -135,6 +210,15 @@
             </a-marker>
             -->
 
+        <a-marker type="pattern" preset="custom" url="assets/pattern-h32-beetle-xs-white.patt"
+            raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
+            <a-entity geometry="primitive:plane;" rotation="-90 0 0" position="0 0 0"
+                material="shader:gif;src:url(assets/h32-beetle-xs.gif);opacity:1"></a-entity>
+            <a-entity geometry="primitive:plane;" rotation="-90 0 0" position="-0.2 0.3 0" scale="0.8 0.8 0.8"
+                material="shader:gif;src:url(assets/h32-beetle-xs.gif);opacity:0.7"></a-entity>
+            <a-entity geometry="primitive:plane;" rotation="-90 0 0" position="0.2 0.3 0" scale="0.8 0.8 0.8"
+                material="shader:gif;src:url(assets/h32-beetle-xs.gif);opacity:0.7"></a-entity>
+        </a-marker>
         <a-marker type="pattern" preset="custom" url="assets/pattern-h32-beetle-xs-white.patt"
             raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
             <a-entity geometry="primitive:plane;" rotation="-90 0 0" position="0 0 0"
@@ -533,6 +617,8 @@
 
         <a-entity camera></a-entity>
     </a-scene>
+        <a-entity camera></a-entity>
+    </a-scene>
 
 
     <div class="msg-wrapper">
@@ -541,9 +627,22 @@
     <div class="marker-frame-wrapper" id="marker_frame_wrapper">
         <img src="./assets/ar-frame-ex.png" />
     </div>
+    <div class="msg-wrapper">
+        <p>マーカーを　カメラで　見てみよう</p>
+    </div>
+    <div class="marker-frame-wrapper" id="marker_frame_wrapper">
+        <img src="./assets/ar-frame-ex.png" />
+    </div>
 
 </body>
+</body>
 
+<script>
+    setTimeout(function () {
+        $('#marker_frame_wrapper').fadeOut('fast');
+    }, 5000); // <-- time in milliseconds
+
+</script>
 <script>
     setTimeout(function () {
         $('#marker_frame_wrapper').fadeOut('fast');
@@ -554,11 +653,39 @@
 <style>
     .msg-wrapper {
         /*
+<style>
+    .msg-wrapper {
+        /*
             background-image: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url('./assets/msg-wrapper.gif');
             background-size: contain;
             background-color: rgba(255,255,255,0.5);
             border:solid 4px rgba(0,0,0,0.5);
             */
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        top: 3%;
+        left: 0;
+        width: 90%;
+        padding: 32px 16px;
+        color: #fff;
+        text-shadow: 1px 1px 2px #000;
+    }
+
+    .msg-wrapper p {
+        margin: auto;
+    }
+
+    .marker-frame-wrapper {
+        position: absolute;
+        top: 25%;
+        left: 0;
+        right: 0;
+        margin: auto;
+        text-align: center;
+
+        @media all and (orientation:landscape) {
+            top: 15%;
         position: absolute;
         display: flex;
         flex-direction: column;
@@ -594,7 +721,19 @@
         @media all and (orientation:landscape) {
             width: auto;
             height: 80vh;
+    }
+
+    .marker-frame-wrapper img {
+        width: 80vw;
+        opacity: 0.5;
+
+        @media all and (orientation:landscape) {
+            width: auto;
+            height: 80vh;
         }
+    }
+</style>
+
     }
 </style>
 
