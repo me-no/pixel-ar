@@ -146,6 +146,16 @@
         </a-marker>
 
         <!-- 完成したもの　ここまで -->
+
+        <!-- for testing red marker -->
+
+        <a-marker type="pattern" preset="custom" url="assets/pattern-hinode-marker.patt"
+            raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
+            <a-entity geometry="primitive:plane;" rotation="-90 0 0" position="0 1.2 0" scale="0.3 0.3 0.3"
+                material="shader:gif;src:url(assets/m08-outline.gif);opacity:0.6"></a-entity>
+        </a-marker>
+
+
         <!--
             <a-marker
                 type="pattern"
