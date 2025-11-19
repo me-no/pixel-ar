@@ -18,6 +18,21 @@
     embedded
     gesture-detector
   >
+    <a-marker
+      type="pattern"
+      preset="custom"
+      url="../assets/pattern-m08.patt"
+      raycaster="objects: .clickable"
+      emitevents="true"
+      cursor="fuse: false; rayOrigin: mouse;"
+    >
+      <a-entity 
+        geometry="primitive:plane;"
+        rotation="-90 0 0"
+        material="shader:gif;src:url(../assets/m08-outline.gif);opacity:1"
+      ></a-entity>
+    </a-marker>
+    
     <a-entity camera></a-entity>
   </a-scene>
 </body>
