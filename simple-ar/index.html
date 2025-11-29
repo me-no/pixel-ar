@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+  <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+  <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js"></script>
+  <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js"></script>
+  <script src="../dist/aframe-gif-shader.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <style>
+    .msg-wrapper {
+      position: absolute;
+      top: 3%;
+      left: 0;
+      width: 90%;
+      display: flex;
+      flex-direction: column;
+      padding: 32px 16px;
+      color: #fff;
+      text-shadow: 1px 1px 2px black;
+    }
+    
+    .msg-wrapper p {
+      margin: auto;
+    }
+    
+    .marker-frame-wrapper {
+      position: absolute;
+      top: 25%;
+      left: 0;
+      right: 0;
+      margin: auto;
+      text-align: center;
+    }
+    
+    .marker-frame-wrapper img {
+      width: 80vw;
+      opacity: 0.5;
+    }
+    
+    @media all and (orientation:landscape) {
+      .marker-frame-wrapper {
+        top: 15%;
+      }
+      
+      .marker-frame-wrapper img {
+        width: auto;
+        height: 80vh;
+      }
+    }
+  </style>
+</head>
+<body style="margin: 0; overflow: hidden;">
+  <a-scene
+    vr-mode-ui="enabled: false;"
+    loading-screen="enabled: false;"
+    arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;patternRatio:0.8;"
+    id="scene"
+    embedded
+    gesture-detector
+  >
+    <a-marker
+      type="pattern"
+      preset="custom"
+      url="assets/ratio08.patt"
+      patternRatio="0.8"
+      raycaster="objects: .clickable"
+      emitevents="true"
+      cursor="fuse: false; rayOrigin: mouse;"
+    >
+      <a-entity 
+        geometry="primitive:plane;"
+        rotation="-90 0 0"
+        material="shader:gif;src:url(assets/m08-outline.gif);opacity:1"
+      ></a-entity>
+    </a-marker>
+
+    <a-marker
+      type="pattern"
+      preset="custom"
+      url="assets/ratio07.patt"
+      patternRatio="0.7"
+      raycaster="objects: .clickable"
+      emitevents="true"
+      cursor="fuse: false; rayOrigin: mouse;"
+    >
+      <a-entity 
+        geometry="primitive:plane;"
+        rotation="-90 0 0"
+        material="shader:gif;src:url(assets/m08-outline.gif);opacity:1"
+      ></a-entity>
+    </a-marker>
+
+    <a-marker
+        type="pattern"
+        preset="custom"
+        url="../assets/pattern-hinode-marker-bk.patt"
+        raycaster="objects: .clickable"
+        emitevents="true"
+        cursor="fuse: false; rayOrigin: mouse;"
+    >
+        <a-entity 
+            geometry="primitive:plane;" 
+            rotation="-90 0 0"
+            position="0 1.2 0"
+            scale="0.3 0.3 0.3"
+            material="shader:gif;src:url(assets/m08-outline.gif);opacity:1"></a-entity>
+    </a-marker>
+
+
+    <a-entity camera></a-entity>
+  </a-scene>
+  
+  <div class="msg-wrapper">
+    <p>マーカーを　カメラで　見てみよう</p>
+  </div>
+  
+  <div class="marker-frame-wrapper" id="marker_frame_wrapper">
+    <img src="../assets/ar-frame-ex.png" />
+  </div>
+  
+  <script>
+    $(document).ready(function() {
+      setTimeout(function() {
+        $('#marker_frame_wrapper').fadeOut('fast');
+      }, 5000);
+    });
+  </script>
+</body>
+</html>
