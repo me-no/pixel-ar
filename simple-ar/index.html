@@ -69,68 +69,33 @@
       emitevents="true"
       cursor="fuse: false; rayOrigin: mouse;"
     >
+      <!-- Horizontal entity (flat on marker) -->
       <a-entity 
         geometry="primitive:plane;"
         rotation="-90 0 0"
-        material="shader:gif;src:url(assets/m08-outline.gif);opacity:1"
+        position="0 0 0"
+        material="shader:gif;src:url(assets/mtfuji.gif);opacity:1"
+        scale="1 1 1"
       ></a-entity>
-    </a-marker>
-
-    <a-marker
-      type="pattern"
-      preset="custom"
-      url="assets/ratio08.patt"
-      patternRatio=0.8
-      raycaster="objects: .clickable"
-      emitevents="true"
-      cursor="fuse: false; rayOrigin: mouse;"
-    >
+      
+      <!-- Vertical entity (standing up from marker) -->
       <a-entity 
         geometry="primitive:plane;"
-        rotation="-90 0 0"
-        material="shader:gif;src:url(assets/m08-outline.gif);opacity:1"
+        rotation="0 0 0"
+        position="0 0.5 0"
+        material="shader:gif;src:url(assets/bird.gif);opacity:1"
+        scale="1 1 1"
       ></a-entity>
     </a-marker>
 
-
-    <a-marker
-      type="pattern"
-      preset="custom"
-      url="assets/ratio07.patt"
-      patternRatio="0.7"
-      raycaster="objects: .clickable"
-      emitevents="true"
-      cursor="fuse: false; rayOrigin: mouse;"
-    >
-      <a-entity 
-        geometry="primitive:plane;"
-        rotation="-90 0 0"
-        material="shader:gif;src:url(assets/m08-outline.gif);opacity:1"
-      ></a-entity>
-    </a-marker>
-
-    <a-marker
-        type="pattern"
-        preset="custom"
-        url="../assets/pattern-hinode-marker-bk.patt"
-        raycaster="objects: .clickable"
-        emitevents="true"
-        cursor="fuse: false; rayOrigin: mouse;"
-    >
-        <a-entity 
-            geometry="primitive:plane;" 
-            rotation="-90 0 0"
-            position="0 1.2 0"
-            scale="0.3 0.3 0.3"
-            material="shader:gif;src:url(assets/m08-outline.gif);opacity:1"></a-entity>
-    </a-marker>
 
 
     <!-- 富士山以外: 251129追記 -->
     <a-marker
         type="pattern"
         preset="custom"
-        url="../assets/hamaya.patt"
+        url="assets/hamaya.patt"
+        patternRatio="0.8"
         raycaster="objects: .clickable"
         emitevents="true"
         cursor="fuse: false; rayOrigin: mouse;"
@@ -138,29 +103,30 @@
         <a-entity 
             geometry="primitive:plane;" 
             rotation="-90 0 0"
-            position="0 1.2 0"
-            scale="0.3 0.3 0.3"
             material="shader:gif;src:url(assets/h29-recorder.gif);opacity:1"></a-entity>
     </a-marker>
     <a-marker
         type="pattern"
         preset="custom"
-        url="../assets/hanetsuki.patt"
+        url="assets/hanetsuki.patt"
+        patternRatio=0.8
         raycaster="objects: .clickable"
         emitevents="true"
         cursor="fuse: false; rayOrigin: mouse;"
     >
         <a-entity 
             geometry="primitive:plane;" 
-            rotation="-90 0 0"
-            position="0 1.2 0"
-            scale="0.3 0.3 0.3"
-            material="shader:gif;src:url(assets/m05_wolf.gif);opacity:1"></a-entity>
+            rotation="-10 0 0"
+            position="0.5 0 -2"
+            material="shader:gif;src:url(assets/hanetsuki-resized.gif);opacity:1"
+            scale="1.2 1.2 1.2"
+            ></a-entity>
     </a-marker>
     <a-marker
         type="pattern"
         preset="custom"
-        url="../assets/koma.patt"
+        url="assets/koma.patt"
+        patternRatio="0.8"
         raycaster="objects: .clickable"
         emitevents="true"
         cursor="fuse: false; rayOrigin: mouse;"
@@ -169,13 +135,13 @@
             geometry="primitive:plane;" 
             rotation="-90 0 0"
             position="0 1.2 0"
-            scale="0.3 0.3 0.3"
             material="shader:gif;src:url(assets/h32-beetle-xs.gif);opacity:1"></a-entity>
     </a-marker>
     <a-marker
         type="pattern"
         preset="custom"
-        url="../assets/mochi.patt"
+        url="assets/mochi.patt"
+        patternRatio="0.8"
         raycaster="objects: .clickable"
         emitevents="true"
         cursor="fuse: false; rayOrigin: mouse;"
@@ -183,8 +149,6 @@
         <a-entity 
             geometry="primitive:plane;" 
             rotation="-90 0 0"
-            position="0 1.2 0"
-            scale="0.3 0.3 0.3"
             material="shader:gif;src:url(assets/h30-schooldesk.gif);opacity:1"></a-entity>
     </a-marker>
 
