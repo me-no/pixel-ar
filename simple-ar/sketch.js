@@ -12,7 +12,7 @@ let drawnArea = [];
 
 function setup() {
   createCanvas(cwidth, cwidth);
-  background(128,0,0);
+  background(255);
   noStroke();
   fill(0);
   rect(bRectEdge, bRectEdge, blackWidth, blackWidth);
