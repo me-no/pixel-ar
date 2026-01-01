@@ -40,30 +40,31 @@
                 material="shader:gif;src:url(assets/ar-cat.gif);opacity:1"></a-entity>
         </a-marker>
 
-        <a-marker
-            type="pattern"
-            preset="custom"
-            url="assets/pattern-ar-firefly.patt"
-            raycaster="objects: .clickable"
-            emitevents="true"
-            cursor="fuse: false; rayOrigin: mouse;"
-        >
-            <a-entity 
-                geometry="primitive:plane;" 
-                rotation="-90 0 0"
-                position="0 0 0"
-                material="shader:gif;src:url(assets/ar-firefly-b.gif);opacity:1;transparent: true"></a-entity>
-            <a-entity 
-                geometry="primitive:plane;" 
-                rotation="-90 0 0"
-                position="0 0.3 0"
-                material="shader:gif;src:url(assets/ar-firefly-m.gif);opacity:1;transparent: true"></a-entity>
-            <a-entity 
-                geometry="primitive:plane;" 
-                rotation="-90 0 0"
-                position="0 1 0"
-                material="shader:gif;src:url(assets/ar-firefly-f.gif);opacity:1;transparent: true"></a-entity>
-        </a-marker>
+            <a-marker
+                type="pattern"
+                preset="custom"
+                url="assets/pattern-ar-firefly.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+                
+            >
+                <a-entity 
+                    geometry="primitive:plane;" 
+                    rotation="-90 0 0"
+                    position="0 0 0"
+                    material="shader:gif;src:url(assets/ar-firefly-b.gif);opacity:1;transparent: true"></a-entity>
+                <a-entity 
+                    geometry="primitive:plane;" 
+                    rotation="-90 0 0"
+                    position="0 0.3 0"
+                    material="shader:gif;src:url(assets/ar-firefly-m.gif);opacity:1;transparent: true"></a-entity>
+                <a-entity 
+                    geometry="primitive:plane;" 
+                    rotation="-90 0 0"
+                    position="0 1 0"
+                    material="shader:gif;src:url(assets/ar-firefly-f.gif);opacity:1;transparent: true"></a-entity>
+            </a-marker>
 
         <!-- 完成したもの -->
 
@@ -212,65 +213,172 @@
             cursor="fuse: false; rayOrigin: mouse;"
         >
             <a-entity 
-                geometry="primitive:plane;" 
-                rotation="-90 0 0"
-                position="0 0 0"
-                material="shader:gif;src:url(assets/h32-beetle-xs.gif);opacity:1"></a-entity>
-            <a-entity 
-                geometry="primitive:plane;" 
-                rotation="-90 0 0"
-                position="-0.2 0.3 0"
-                scale="0.8 0.8 0.8"
-                material="shader:gif;src:url(assets/h32-beetle-xs.gif);opacity:0.7"></a-entity>
-            <a-entity 
-                geometry="primitive:plane;" 
-                rotation="-90 0 0"
-                position="0.2 0.3 0"
-                scale="0.8 0.8 0.8"
-                material="shader:gif;src:url(assets/h32-beetle-xs.gif);opacity:0.7"></a-entity>
-        </a-marker>
+                    geometry="primitive:plane;" 
+                    rotation="-90 0 0"
+                    material="shader:gif;src:url(assets/h32-beetle-xs.gif);opacity:1"></a-entity>
+            </a-marker>
 
-        <!-- for testing red marker -->
-        <a-marker
-            type="pattern"
-            preset="custom"
-            url="assets/pattern-hinode-marker-800000.patt"
-            raycaster="objects: .clickable"
-            emitevents="true"
-            cursor="fuse: false; rayOrigin: mouse;"
-        >
+            <a-marker
+                type="pattern"
+                preset="custom"
+                url="assets/h17_guitar.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+            >
+            <a-entity 
+                    geometry="primitive:plane;" 
+                    rotation="-90 0 0"
+                    material="shader:gif;src:url(assets/h17_ukulele.gif);opacity:1"></a-entity>
+            </a-marker>
+
+            <!-- 夏ドロゴ -->
+            <a-marker
+                type="pattern"
+                preset="custom"
+                url="assets/pattern-logo-marker.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+            >
+
+
             <a-entity 
                 geometry="primitive:plane;" 
+                scale=".5 .5 .5"
                 rotation="-90 0 0"
-                position="0 1.2 0"
-                scale="0.3 0.3 0.3"
-                material="shader:gif;src:url(assets/m08-outline.gif);opacity:1"></a-entity>
-        </a-marker>
-        <a-marker
-            type="pattern"
-            preset="custom"
-            url="assets/pattern-hinode-marker-bk.patt"
-            raycaster="objects: .clickable"
-            emitevents="true"
-            cursor="fuse: false; rayOrigin: mouse;"
-        >
+                material="color:white;shader:gif;src:url(assets/daiseikou_lossy.gif);opacity:1;"></a-entity>
+
+
+
+
             <a-entity 
                 geometry="primitive:plane;" 
-                rotation="-90 0 0"
-                position="0 1.2 0"
-                scale="0.3 0.3 0.3"
-                material="shader:gif;src:url(assets/m08-outline.gif);opacity:1"></a-entity>
-        </a-marker>
+                position="0 0 -1.5"
+                scale="1"
+                material="shader:gif;src:url(assets/hisashi_penguin_r.gif);opacity:1;transparent:true"></a-entity>
 
-        <a-entity camera></a-entity>
-    </a-scene>
+            <a-entity 
+                geometry="primitive:plane;" 
+                position="-0.5 0 -1.25"
+                scale="1"
+                material="shader:gif;src:url(assets/ar-cat.gif);opacity:1;transparent:true"></a-entity>
+            <a-entity 
+                geometry="primitive:plane;" 
+                position="0.5 0 -1.25"
+                scale="1"
+                material="shader:gif;src:url(assets/ar-firefly-m.gif);opacity:1;transparent:true"></a-entity>
 
-    <div class="msg-wrapper">
-        <p>マーカーを　カメラで　見てみよう</p>
-    </div>
-    <div class="marker-frame-wrapper" id="marker_frame_wrapper">
-        <img src="./assets/ar-frame-ex.png" />
-    </div>
+
+
+
+
+            <a-entity 
+                geometry="primitive:plane;" 
+                position="1 0 -0.75"
+                scale="0.5"
+                material="shader:gif;src:url(assets/h17_ukulele.gif);opacity:1;transparent:true"></a-entity>
+            <a-entity 
+                geometry="primitive:plane;" 
+                position="-1 0 -0.75"
+                scale="0.5"
+                material="shader:gif;src:url(assets/h29-recorder.gif);opacity:1;transparent:true"></a-entity>
+
+
+            <a-entity 
+                geometry="primitive:plane;" 
+                position="0.75 0 -0.5"
+                scale="0.5"
+                material="shader:gif;src:url(assets/m11_hippo.gif);opacity:1;transparent:true"></a-entity>
+            <a-entity 
+                geometry="primitive:plane;" 
+                position="-0.75 0 -0.5"
+                scale="0.5"
+                material="shader:gif;src:url(assets/h30-schooldesk.gif);opacity:1;transparent:true"></a-entity>
+
+
+            <a-entity 
+                geometry="primitive:plane;" 
+                position="0 1 0"
+                scale="1"
+                material="shader:flat;src:url(assets/natsudo-kun.png);opacity:1;transparent:true"></a-entity>
+
+
+            <a-entity 
+                geometry="primitive:plane;" 
+                position="0.5 0.25 0.5"
+                scale="0.5"
+                material="shader:gif;src:url(assets/h32-beetle-xs.gif);opacity:1;transparent:true"></a-entity>
+            <a-entity 
+                geometry="primitive:plane;" 
+                position="-0.5 0.25 0.5"
+                scale="0.5"
+                material="shader:gif;src:url(assets/h21-shavedice.gif);opacity:1;transparent:true"></a-entity>
+
+
+            <a-entity 
+                geometry="primitive:plane;" 
+                position="0.25 0 0.75"
+                scale="0.5"
+                material="shader:gif;src:url(assets/m08-outline.gif);opacity:1;transparent:true"></a-entity>
+            <a-entity 
+                geometry="primitive:plane;" 
+                position="-0.25 0 0.75"
+                scale="0.5"
+                material="shader:gif;src:url(assets/h31-ring.gif);opacity:1;transparent:true"></a-entity>
+            <a-entity 
+                geometry="primitive:plane;" 
+                position="0 0 1"
+                scale="0.5"
+                material="shader:gif;src:url(assets/m05_wolf.gif);opacity:1;transparent:true"></a-entity>
+            </a-marker>
+
+            <a-marker
+                type="pattern"
+                preset="custom"
+                url="assets/pattern-hisashi_penguin_r.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+            >
+            <a-entity 
+                    geometry="primitive:plane;" 
+                    rotation="-90 0 0"
+                    material="shader:gif;src:url(assets/hisashi_penguin_r.gif);opacity:1"></a-entity>
+            </a-marker>
+
+            <a-marker
+                type="pattern"
+                preset="custom"
+                url="assets/pattern-hisashi-watermelon.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+            >
+            <a-entity 
+                    geometry="primitive:plane;" 
+                    rotation="-90 0 0"
+                    material="shader:gif;src:url(assets/hisashi-watermelon-trans.gif);opacity:1"></a-entity>
+            </a-marker>
+
+            <!-- 完成したもの　ここまで -->
+
+
+
+
+
+            <a-entity camera></a-entity>
+        </a-scene>
+
+        <div class="font_preload" style="display:none;">
+            <span style="font-family: 'MaruMinya';"></span>
+        </div>
+        <div class="msg-wrapper">
+            <p>マーカーを　カメラで　見てみよう</p>
+        </div>
+        <div class="marker-frame-wrapper" id="marker_frame_wrapper">
+            <img src="./assets/ar-frame-ex.png" />
+        </div>
 
 </body>
 
@@ -282,40 +390,33 @@
     });
 </script>
 
-<style>
-    .msg-wrapper {
-        /*
-        background-image: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url('./assets/msg-wrapper.gif');
-        background-size: contain;
-        background-color: rgba(255,255,255,0.5);
-        border:solid 4px rgba(0,0,0,0.5);
-        */
-        position: absolute;
-        display: flex;
-        flex-direction: column;
-        top: 3%;
-        left: 0;
-        width: 90%;
-        padding: 32px 16px;
-        color: #fff;
-        text-shadow: 1px 1px 2px #000;
-    }
-    .msg-wrapper p {
-        margin: auto;
-    }
-    .marker-frame-wrapper {
-        position: absolute;
-        top: 25%;
-        left: 0;
-        right: 0;
-        margin: auto;
-        text-align: center;
-    }
-    .marker-frame-wrapper img {
-        width: 80vw;
-        opacity: 0.5;
-    }
-    @media all and (orientation:landscape) {
+    <style>
+        @font-face {
+            font-family: 'MaruMinya';
+            src: url('./assets/x12y12pxMaruMinya.ttf');
+        }
+        .msg-wrapper {
+            /*
+            background-image: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url('./assets/msg-wrapper.gif');
+            background-size: contain;
+            background-color: rgba(255,255,255,0.5);
+            border:solid 4px rgba(0,0,0,0.5);
+            */
+            position: absolute;
+            display:flex;
+            flex-direction:column;
+            top:3%;
+            left:0;
+            width:90%;
+            padding:32px 16px;
+            color: #fff;
+            text-shadow: 1px 1px 2px #000;
+            z-index:1;
+        }
+        .msg-wrapper p {
+            margin:auto;
+            font-family:'MaruMinya';
+        }
         .marker-frame-wrapper {
             top: 15%;
         }
