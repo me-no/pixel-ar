@@ -1,65 +1,44 @@
 <!doctype html>
 <html>
-    <head>
-        <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-        <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-        <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
-        <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js"></script>
-        <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js"></script>
+<head>
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js"></script>
 
-        <!-- to load gifs -->
-        <!--
-        <script src="https://rawgit.com/mayognaise/aframe-gif-shader/master/dist/aframe-gif-shader.min.js"></script>
-        -->
-        <script src="dist/aframe-gif-shader.min.js"></script>
+    <!-- to load gifs -->
+    <script src="dist/aframe-gif-shader.min.js"></script>
 
-        <!-- jQuery -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    </head>
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</head>
 
-    <body style="margin: 0; overflow: hidden;">
-        <a-scene
-            vr-mode-ui="enabled: false;"
-            loading-screen="enabled: false;"
-            arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
-            id="scene"
-            embedded
-            gesture-detector
+<body style="margin: 0; overflow: hidden;">
+    <a-scene
+        vr-mode-ui="enabled: false;"
+        loading-screen="enabled: false;"
+        arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
+        id="scene"
+        embedded
+        gesture-detector
+    >
+
+        <!-- プロトタイプ -->
+
+        <a-marker
+            type="pattern"
+            preset="custom"
+            url="assets/pattern-ar-cat.patt"
+            raycaster="objects: .clickable"
+            emitevents="true"
+            cursor="fuse: false; rayOrigin: mouse;"
         >
-
-            <!-- プロトタイプ -->
-
-            <a-marker
-                type="pattern"
-                preset="custom"
-                url="assets/pattern-ar-cat.patt"
-                raycaster="objects: .clickable"
-                emitevents="true"
-                cursor="fuse: false; rayOrigin: mouse;"
-                
-            >
-                <a-entity 
-                    geometry="primitive:plane;"
-                    rotation="-90 0 0"
-                    material="shader:gif;src:url(assets/ar-cat.gif);opacity:1"></a-entity>
-            </a-marker>
-
-            <!--
-            <a-marker
-                type="pattern"
-                preset="custom"
-                url="assets/pattern-ar-yacht.patt"
-                raycaster="objects: .clickable"
-                emitevents="true"
-                cursor="fuse: false; rayOrigin: mouse;"
-                
-            >
-                <a-entity 
-                    geometry="primitive:plane;" 
-                    rotation="-90 0 0"
-                    material="shader:gif;src:url(assets/yacht.gif);opacity:1"></a-entity>
-            </a-marker>
-            -->
+            <a-entity 
+                geometry="primitive:plane;"
+                rotation="-90 0 0"
+                material="shader:gif;src:url(assets/ar-cat.gif);opacity:1"></a-entity>
+        </a-marker>
 
             <a-marker
                 type="pattern"
@@ -87,137 +66,152 @@
                     material="shader:gif;src:url(assets/ar-firefly-f.gif);opacity:1;transparent: true"></a-entity>
             </a-marker>
 
-            <!-- 完成したもの -->
+        <!-- 完成したもの -->
 
-            <!------------------- markers from mokemo-san ------------------------>
+        <!------------------- markers from mokemo-san ------------------------>
 
-            <a-marker
-                type="pattern"
-                preset="custom"
-                url="assets/pattern-m05.patt"
-                raycaster="objects: .clickable"
-                emitevents="true"
-                cursor="fuse: false; rayOrigin: mouse;"
-                
-            >
+        <a-marker
+            type="pattern"
+            preset="custom"
+            url="assets/pattern-m05.patt"
+            raycaster="objects: .clickable"
+            emitevents="true"
+            cursor="fuse: false; rayOrigin: mouse;"
+        >
             <a-entity 
-                    geometry="primitive:plane;" 
-                    rotation="-90 0 0"
-                    material="shader:gif;src:url(assets/m05_wolf.gif);opacity:1"></a-entity>
-            </a-marker>
-
-            <a-marker
-                type="pattern"
-                preset="custom"
-                url="assets/pattern-m08.patt"
-                raycaster="objects: .clickable"
-                emitevents="true"
-                cursor="fuse: false; rayOrigin: mouse;"
-            >
+                geometry="primitive:plane;" 
+                rotation="-90 0 0"
+                position="0 0 0"
+                material="shader:gif;src:url(assets/m05_wolf.gif);opacity:1"></a-entity>
             <a-entity 
-                    geometry="primitive:plane;" 
-                    rotation="-90 0 0"
-                    material="shader:gif;src:url(assets/m08-outline.gif);opacity:1"></a-entity>
-            </a-marker>
+                geometry="primitive:plane;" 
+                rotation="-90 0 0"
+                position="0 0.5 0"
+                scale="0.8 0.8 0.8"
+                material="shader:gif;src:url(assets/m05_wolf.gif);opacity:0.7"></a-entity>
+        </a-marker>
 
-            <a-marker
-                type="pattern"
-                preset="custom"
-                url="assets/pattern-m11.patt"
-                raycaster="objects: .clickable"
-                emitevents="true"
-                cursor="fuse: false; rayOrigin: mouse;"
-            >
+        <a-marker
+            type="pattern"
+            preset="custom"
+            url="assets/pattern-m08.patt"
+            raycaster="objects: .clickable"
+            emitevents="true"
+            cursor="fuse: false; rayOrigin: mouse;"
+        >
             <a-entity 
-                    geometry="primitive:plane;" 
-                    rotation="-90 0 0"
-                    material="shader:gif;src:url(assets/m11_hippo.gif);opacity:1"></a-entity>
-            </a-marker>
+                geometry="primitive:plane;" 
+                rotation="-90 0 0"
+                material="shader:gif;src:url(assets/m08-outline.gif);opacity:1"></a-entity>
+        </a-marker>
 
-            <!--------------------------------- markers from hisashi-san ----------------------------------->
-
-
-            <a-marker
-                type="pattern"
-                preset="custom"
-                url="assets/h21_shavedice.patt"
-                raycaster="objects: .clickable"
-                emitevents="true"
-                cursor="fuse: false; rayOrigin: mouse;"
-            >
+        <a-marker
+            type="pattern"
+            preset="custom"
+            url="assets/pattern-m11.patt"
+            raycaster="objects: .clickable"
+            emitevents="true"
+            cursor="fuse: false; rayOrigin: mouse;"
+        >
             <a-entity 
-                    geometry="primitive:plane;" 
-                    rotation="-90 0 0"
-                    material="shader:gif;src:url(assets/h21-shavedice.gif);opacity:1"></a-entity>
-            </a-marker>
-
-            <a-marker
-                type="pattern"
-                preset="custom"
-                url="assets/h29-recorder.patt"
-                raycaster="objects: .clickable"
-                emitevents="true"
-                cursor="fuse: false; rayOrigin: mouse;"
-            >
+                geometry="primitive:plane;" 
+                rotation="-90 0 0"
+                position="0 0 0"
+                material="shader:gif;src:url(assets/m11_hippo.gif);opacity:1"></a-entity>
             <a-entity 
-                    geometry="primitive:plane;" 
-                    rotation="-90 0 0"
-                    material="shader:gif;src:url(assets/h29-recorder.gif);opacity:1"></a-entity>
-            </a-marker>
+                geometry="primitive:plane;" 
+                rotation="-90 0 0"
+                position="0.3 0.4 0"
+                scale="0.6 0.6 0.6"
+                material="shader:gif;src:url(assets/m11_hippo.gif);opacity:0.8"></a-entity>
+        </a-marker>
 
-            <a-marker
-                type="pattern"
-                preset="custom"
-                url="assets/h30-schooldesk.patt"
-                raycaster="objects: .clickable"
-                emitevents="true"
-                cursor="fuse: false; rayOrigin: mouse;"
-            >
+        <!--------------------------------- markers from hisashi-san ----------------------------------->
+
+        <a-marker
+            type="pattern"
+            preset="custom"
+            url="assets/h21_shavedice.patt"
+            raycaster="objects: .clickable"
+            emitevents="true"
+            cursor="fuse: false; rayOrigin: mouse;"
+        >
             <a-entity 
-                    geometry="primitive:plane;" 
-                    rotation="-90 0 0"
-                    material="shader:gif;src:url(assets/h30-schooldesk.gif);opacity:1"></a-entity>
-            </a-marker>
-
-            <a-marker
-                type="pattern"
-                preset="custom"
-                url="assets/pattern-h31-ring-white.patt"
-                raycaster="objects: .clickable"
-                emitevents="true"
-                cursor="fuse: false; rayOrigin: mouse;"
-            >
+                geometry="primitive:plane;" 
+                rotation="-90 0 0"
+                position="0 0 0"
+                material="shader:gif;src:url(assets/h21-shavedice.gif);opacity:1"></a-entity>
             <a-entity 
-                    geometry="primitive:plane;" 
-                    rotation="-90 0 0"
-                    material="shader:gif;src:url(assets/h31-ring.gif);opacity:1"></a-entity>
-            </a-marker>
+                geometry="primitive:plane;" 
+                rotation="-90 0 0"
+                position="0 0.6 0"
+                scale="0.7 0.7 0.7"
+                material="shader:gif;src:url(assets/h21-shavedice.gif);opacity:0.6"></a-entity>
+        </a-marker>
 
-            <!-- ギターと被るので保留 -->
-            <!--
-            <a-marker
-                type="pattern"
-                preset="custom"
-                url="assets/pattern-h32-beetle-white.patt"
-                raycaster="objects: .clickable"
-                emitevents="true"
-                cursor="fuse: false; rayOrigin: mouse;"
-            >
+        <a-marker
+            type="pattern"
+            preset="custom"
+            url="assets/h29-recorder.patt"
+            raycaster="objects: .clickable"
+            emitevents="true"
+            cursor="fuse: false; rayOrigin: mouse;"
+        >
             <a-entity 
-                    geometry="primitive:plane;" 
-                    rotation="-90 0 0"
-                    material="shader:gif;src:url(assets/h32-beetle.gif);opacity:1"></a-entity>
-            </a-marker>
-            -->
+                geometry="primitive:plane;" 
+                rotation="-90 0 0"
+                material="shader:gif;src:url(assets/h29-recorder.gif);opacity:1"></a-entity>
+        </a-marker>
 
-            <a-marker
-                type="pattern"
-                preset="custom"
-                url="assets/pattern-h32-beetle-xs-white.patt"
-                raycaster="objects: .clickable"
-                emitevents="true"
-                cursor="fuse: false; rayOrigin: mouse;"
-            >
+        <a-marker
+            type="pattern"
+            preset="custom"
+            url="assets/h30-schooldesk.patt"
+            raycaster="objects: .clickable"
+            emitevents="true"
+            cursor="fuse: false; rayOrigin: mouse;"
+        >
+            <a-entity 
+                geometry="primitive:plane;" 
+                rotation="-90 0 0"
+                material="shader:gif;src:url(assets/h30-schooldesk.gif);opacity:1"></a-entity>
+        </a-marker>
+
+        <a-marker
+            type="pattern"
+            preset="custom"
+            url="assets/pattern-h31-ring-white.patt"
+            raycaster="objects: .clickable"
+            emitevents="true"
+            cursor="fuse: false; rayOrigin: mouse;"
+        >
+            <a-entity 
+                geometry="primitive:plane;" 
+                rotation="-90 0 0"
+                position="0 0 0"
+                material="shader:gif;src:url(assets/h31-ring.gif);opacity:1"></a-entity>
+            <a-entity 
+                geometry="primitive:plane;" 
+                rotation="-90 0 0"
+                position="0 0.8 0"
+                scale="0.5 0.5 0.5"
+                material="shader:gif;src:url(assets/h31-ring.gif);opacity:0.8"></a-entity>
+            <a-entity 
+                geometry="primitive:plane;" 
+                rotation="-90 0 0"
+                position="0 1.2 0"
+                scale="0.3 0.3 0.3"
+                material="shader:gif;src:url(assets/h31-ring.gif);opacity:0.6"></a-entity>
+        </a-marker>
+
+        <a-marker
+            type="pattern"
+            preset="custom"
+            url="assets/pattern-h32-beetle-xs-white.patt"
+            raycaster="objects: .clickable"
+            emitevents="true"
+            cursor="fuse: false; rayOrigin: mouse;"
+        >
             <a-entity 
                     geometry="primitive:plane;" 
                     rotation="-90 0 0"
@@ -386,14 +380,15 @@
             <img src="./assets/ar-frame-ex.png" />
         </div>
 
-    </body>
+</body>
 
-    <script>
+<script>
+    $(document).ready(function() {
         setTimeout(function() {
             $('#marker_frame_wrapper').fadeOut('fast');
         }, 5000); // <-- time in milliseconds
-        
-    </script>
+    });
+</script>
 
     <style>
         @font-face {
@@ -423,24 +418,13 @@
             font-family:'MaruMinya';
         }
         .marker-frame-wrapper {
-            position:absolute;
-            top:25%;
-            left:0;
-            right:0;
-            margin:auto;
-            text-align:center;
-            @media all and (orientation:landscape) {
-                top:15%;
-            }
+            top: 15%;
         }
         .marker-frame-wrapper img {
-            width:80vw;
-            opacity:0.5;
-            @media all and (orientation:landscape) {
-                width:auto;
-                height:80vh;
-            }
+            width: auto;
+            height: 80vh;
         }
+    }
+</style>
 
-    </style>
 </html>
