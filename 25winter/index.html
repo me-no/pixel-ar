@@ -68,13 +68,13 @@
       raycaster="objects: .clickable"
       emitevents="true"
       cursor="fuse: false; rayOrigin: mouse;"
-    >
+    ><!-- 富士山 -->
       <!-- Horizontal entity (flat on marker) -->
       <a-entity 
         geometry="primitive:plane;"
         rotation="-90 0 0"
         position="0 0 0"
-        material="shader:gif;src:url(assets/mtfuji.gif);opacity:1"
+        material="shader:gif;src:url(assets/mtfuji.gif);opacity:1;transparent: true"
         scale="1 1 1"
       ></a-entity>
       
@@ -83,28 +83,116 @@
         geometry="primitive:plane;"
         rotation="0 0 0"
         position="0 0.5 0"
-        material="shader:gif;src:url(assets/bird.gif);opacity:1"
+        material="shader:gif;src:url(assets/bird.gif);opacity:1;transparent: true"
         scale="1 1 1"
       ></a-entity>
     </a-marker>
 
-
-
-    <!-- 富士山以外: 251129追記 -->
     <a-marker
         type="pattern"
         preset="custom"
-        url="assets/hamaya.patt"
+        url="assets/mochi.patt"
         patternRatio="0.8"
         raycaster="objects: .clickable"
         emitevents="true"
         cursor="fuse: false; rayOrigin: mouse;"
-    >
-        <a-entity 
-            geometry="primitive:plane;" 
-            rotation="-90 0 0"
-            material="shader:gif;src:url(assets/h29-recorder.gif);opacity:1"></a-entity>
+    ><!-- 鏡餅 -->
+      <!-- Horizontal entity (flat on marker) -->
+      <a-entity 
+        geometry="primitive:plane;"
+        rotation="-90 0 0"
+        position="0 0 0"
+        material="src:url(assets/mochi_mat.png);opacity:1;"
+        scale="1 1 1"
+      ></a-entity>
+      <a-entity 
+        geometry="primitive:plane;"
+        rotation="-90 0 0"
+        position="0 0.5 0.1"
+        material="shader:gif;src:url(assets/mochi.gif);opacity:1;transparent: true"
+        scale="1 1 1"
+      ></a-entity>
+      <a-entity 
+        geometry="primitive:plane;"
+        rotation="-90 0 0"
+        position="0 1 0.2"
+        material="shader:gif;src:url(assets/mochi_orange.gif);opacity:1;transparent: true"
+        scale="1 1 1"
+      ></a-entity>
+      
+      <!-- Vertical entity (standing up from marker) -->
     </a-marker>
+
+    <a-marker
+      type="pattern"
+      preset="custom"
+      url="assets/pattern-horse.patt"
+      patternRatio="0.8"
+      raycaster="objects: .clickable"
+      emitevents="true"
+      cursor="fuse: false; rayOrigin: mouse;"
+      id="horse-marker"
+    ><!-- 馬＠むれさん -->
+
+      <!-- Horizontal entity (flat on marker) -->
+
+      <!-- Vertical entity (standing up from marker) -->
+      <a-entity
+        geometry="primitive:plane;"
+        rotation="-10 0 0"
+        position="0 1 0"
+        material="shader:gif;src:url(assets/horse.gif);opacity:1;transparent: true"
+        scale="1 1 1"
+      ></a-entity>
+    </a-marker>
+
+    <a-marker
+      type="pattern"
+      preset="custom"
+      url="assets/pattern-wanko.patt"
+      patternRatio="0.8"
+      raycaster="objects: .clickable"
+      emitevents="true"
+      cursor="fuse: false; rayOrigin: mouse;"
+      id="horse-marker"
+    ><!-- わんこ＠ガラさん -->
+
+      <!-- Horizontal entity (flat on marker) -->
+
+      <!-- Vertical entity (standing up from marker) -->
+      <a-entity
+        geometry="primitive:plane;"
+        rotation="-10 0 0"
+        position="0 1 0"
+        material="shader:gif;src:url(assets/wanko.gif);opacity:1;transparent: true"
+        scale="1.5 1.5 1.5"
+      ></a-entity>
+    </a-marker>
+
+    <a-marker
+      type="pattern"
+      preset="custom"
+      url="assets/pattern-running.patt"
+      patternRatio="0.8"
+      raycaster="objects: .clickable"
+      emitevents="true"
+      cursor="fuse: false; rayOrigin: mouse;"
+      id="horse-marker"
+    ><!-- 走る子＠ガラさん -->
+
+      <!-- Horizontal entity (flat on marker) -->
+
+      <!-- Vertical entity (standing up from marker) -->
+      <a-entity
+        geometry="primitive:plane;"
+        rotation="-10 0 0"
+        position="0 1 0"
+        material="shader:gif;src:url(assets/running.gif);opacity:1;transparent: true"
+        scale="1 1 1"
+      ></a-entity>
+    </a-marker>
+
+    <!-- 富士山以外: 251129追記 -->
     <a-marker
         type="pattern"
         preset="custom"
@@ -130,28 +218,13 @@
         raycaster="objects: .clickable"
         emitevents="true"
         cursor="fuse: false; rayOrigin: mouse;"
-    >
+    ><!-- 駒（仮） -->
         <a-entity 
             geometry="primitive:plane;" 
             rotation="-90 0 0"
             position="0 1.2 0"
-            material="shader:gif;src:url(assets/h32-beetle-xs.gif);opacity:1"></a-entity>
+            material="shader:gif;src:url(assets/mochi.gif);opacity:1"></a-entity>
     </a-marker>
-    <a-marker
-        type="pattern"
-        preset="custom"
-        url="assets/mochi.patt"
-        patternRatio="0.8"
-        raycaster="objects: .clickable"
-        emitevents="true"
-        cursor="fuse: false; rayOrigin: mouse;"
-    >
-        <a-entity 
-            geometry="primitive:plane;" 
-            rotation="-90 0 0"
-            material="shader:gif;src:url(assets/h30-schooldesk.gif);opacity:1"></a-entity>
-    </a-marker>
-
 
 
     <a-entity camera></a-entity>
@@ -170,6 +243,33 @@
       setTimeout(function() {
         $('#marker_frame_wrapper').fadeOut('fast');
       }, 5000);
+    });
+
+    // Debug: Log when horse marker is found/lost
+    AFRAME.registerComponent('markerhandler', {
+      init: function() {
+        const marker = this.el;
+
+        marker.addEventListener('markerFound', function() {
+          console.log('🐴 HORSE MARKER FOUND!');
+          console.log('Marker element:', marker);
+        });
+
+        marker.addEventListener('markerLost', function() {
+          console.log('❌ HORSE MARKER LOST');
+        });
+      }
+    });
+
+    // Attach the component after scene loads
+    document.addEventListener('DOMContentLoaded', function() {
+      const horseMarker = document.querySelector('#horse-marker');
+      if (horseMarker) {
+        horseMarker.setAttribute('markerhandler', '');
+        console.log('✅ Debug script attached to horse marker');
+      } else {
+        console.error('⚠️ Could not find horse marker element');
+      }
     });
   </script>
 </body>
