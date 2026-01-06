@@ -38,12 +38,38 @@
       width: 80vw;
       opacity: 0.5;
     }
-    
+    /*
+    .icons-wrapper {
+      position: absolute;
+      bottom: -8px;
+      left: 20px;
+      z-index: 10;
+    }
+
+    .icons-wrapper img {
+      width: 60%;
+      height: auto;
+      max-width: 360px;
+    }
+    */
+
+    .logo-wrapper {
+      position: absolute;
+      bottom: 8px;
+      right: 8px;
+      z-index: 10;
+    }
+
+    .logo-wrapper img {
+      width: 40px;
+      height: auto;
+    }
+
     @media all and (orientation:landscape) {
       .marker-frame-wrapper {
         top: 15%;
       }
-      
+
       .marker-frame-wrapper img {
         width: auto;
         height: 80vh;
@@ -235,9 +261,17 @@
   </div>
   
   <div class="marker-frame-wrapper" id="marker_frame_wrapper">
-    <img src="../assets/ar-frame-ex.png" />
+    <img src="../assets/marker-frame-08.png" />
   </div>
-  
+
+  <div class="icons-wrapper" style="display:none;">
+    <img src="assets/fuyudo_icons_up.png" alt="Logo" />
+  </div>
+
+  <div class="logo-wrapper">
+    <img src="assets/fuyudo_logo.png" alt="Logo" />
+  </div>
+
   <script>
     $(document).ready(function() {
       setTimeout(function() {
